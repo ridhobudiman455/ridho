@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Resmi Ridho Budiman - Spesialis IT, Jaringan Komputer, dan Administrasi Data.">
+    <meta name="keywords" content="Ridho Budiman, IT Support, MikroTik, Networking, Administrasi Data, Portofolio">
+    <meta name="author" content="Ridho Budiman">
+    
+    <title>Ridho Budiman | IT Support & Network Administrator</title>
+
+    <style>
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* === NAVBAR === */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #26344f;
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ec4899; /* Aksen pink cerah saat hover */
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #38bdf8;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            padding: 140px 8% 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text p:first-child {
+            color: #38bdf8;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            .cursor {
+    display: inline-block;
+    color: #38bdf8; /* Warna biru sesuai tema */
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+            color: #cbd5e1;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background: #ec4899; /* Transisi ke pink cerah */
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* === PROFILE PICTURE === */
+        .profile {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+            flex-shrink: 0;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* === SECTIONS GENERAL === */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        /* === ABOUT SECTION === */
+        .about {
+            background: #111c33;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* === SKILLS SECTION === */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill {
+            background: #17233a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #26344f;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+            color: #f8fafc;
+        }
+
+        .skill p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #0f172a;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #38bdf8;
+            border-radius: 4px;
+        }
+
+        /* === PROJECTS SECTION === */
+        .projects {
+            background: #111c33;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project {
+            background: #17233a;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #26344f;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #ec4899;
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .tag.accent {
+            background: rgba(236, 72, 153, 0.1);
+            color: #ec4899;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .contact-info p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border: 1px solid #26344f;
+            background: #17233a;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+            transform: translateX(5px);
+        }
+
+        .contact-form {
+            background: #17233a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #26344f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #26344f;
+            border-radius: 6px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #ec4899;
+            color: white;
+        }
+
+        /* === BACK TO TOP BUTTON === */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #38bdf8;
+            color: #0f172a;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 99;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: #7dd3fc;
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #080f1e;
+            color: #64748b;
+            border-top: 1px solid #17233a;
+            font-size: 14px;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                right: 0px;
+                height: 92vh;
+                top: 65px;
+                background-color: #0f172a;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 60%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                padding-top: 40px;
+                border-left: 1px solid #26344f;
+            }
+
+            .nav-active {
+                transform: translateX(0%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .profile {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">RIDHO BUDIMAN</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+
+    <!-- HOME HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p>HALO, SAYA</p>
+            <h1>Ridho <span>Budiman</span></h1>
+           <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
+            
+            <p class="hero-description">
+                Berfokus pada pengelolaan jaringan komputer, administrasi data sistem, dan dukungan infrastruktur IT. Senang mempelajari teknologi baru dan siap memberikan kontribusi profesional.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn-primary">Lihat Project</a>
+                <a href="#contact" class="btn-secondary">Hubungi Saya</a>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img src="dodo.jpg" alt="Foto Profil Ridho Budiman">
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>Tentang Saya</h2>
+            <p>Mengenal lebih dekat latar belakang saya</p>
+        </div>
+
+        <div class="about-content">
+            <p>
+                Saya <strong>Ridho Budiman</strong>, praktisi muda lulusan program vokasi Praktik Sistem dan Jaringan (PSJ) yang berdedikasi di bidang Teknologi Informasi. Memiliki pemahaman kuat mengenai infrastruktur jaringan komputer, pemeliharaan sistem, administrasi berkas, serta pengelolaan profil digital.
+            </p>
+            <br>
+            <p>
+                Dikenal sebagai pribadi yang teliti, cepat beradaptasi, dan berorientasi pada detail untuk memecahkan masalah teknis (<em>troubleshooting</em>) secara presisi dan efisien.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- KEAHLIAN SECTION -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>Keahlian Utama</h2>
+            <p>Spesialisasi dan kompetensi teknis</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill">
+                <div class="icon">🌐</div>
+                <h3>Jaringan Komputer</h3>
+                <p>Konfigurasi MikroTik, IP Subnetting, Routing dasar, LAN/WAN, dan troubleshooting konektivitas.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="icon">🖥️</div>
+                <h3>IT Support & Admin</h3>
+                <p>Instalasi OS/Software, optimalisasi konfigurasi BIOS, dan pemeliharaan perangkat keras,.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="icon">📊</div>
+                <h3>Pengolahan Data</h3>
+                <p>Pengoperasian Microsoft Office</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 88%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROJECT SECTION -->
+    <section class="projects" id="projects">
+        <div class="section-title">
+            <h2>Project & Pengalaman</h2>
+            <p>Implementasi sistem dan rekam jejak teknis</p>
+        </div>
+
+        <div class="project-container">
+            <div class="project">
+                <div>
+                    <h3>🌐 Perancangan Jaringan MikroTik</h3>
+                    <p>Membangun dan mengonfigurasi jaringan router MikroTik untuk pembagian bandwidth, keamanan firewall, dan manajemen jaringan lokal.</p>
+                </div>
+                <div class="tags">
+                    <span class="tag">MikroTik</span>
+                    <span class="tag">Winbox</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>📋 Manajemen Identitas Digital (Agen BRILink)</h3>
+                    <p>Menyelesaikan proses verifikasi lokasi bisnis secara akurat melalui pengajuan bukti video terstruktur untuk Google Business Profile dan Google Maps.</p>
+                </div>
+                <div class="tags">
+                    <span class="tag">Google Maps</span>
+                    <span class="tag">Data Entry</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <h3>🖥️ Hardware & Display Troubleshooting</h3>
+                    <p>Melakukan pemeliharaan laptop (termasuk unit Lenovo) dan PC, mencakup optimalisasi BIOS serta diagnosa kerusakan visual seperti layar bergaris merah atau artefak grafis.</p>
+                </div>
+                <div class="tags">
+                    <span class="tag">Hardware</span>
+                    <span class="tag">BIOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KONTAK SECTION -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Hubungi Saya</h2>
+            <p>Mari berdiskusi atau bekerja sama</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p>Terbuka untuk tawaran kerja, proyek lepas (freelance).</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ridhobudimann/" target="_blank">
+                        📱 Instagram: @ridhobudimann
+                    </a>
+                    <a href="https://github.com/ridhobudiman455/bangdodo" target="_blank">
+                        💻 GitHub: ridhobudiman455
+                    </a>
+                    <a href="https://www.linkedin.com/in/ridho-budiman-b2699a430/" target="_blank">
+                        💼 LinkedIn: Ridho Budiman
+                    </a>
+                </div>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="18c83419-aec3-43c6-9f47-75bbe285a5e5">
+
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- TOMBOL BACK TO TOP -->
+    <a href="#home" class="back-to-top" title="Kembali ke Atas">↑</a>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Ridho Budiman. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+            });
+        });
+    </script>
+   <script>
+    const text = "IT Support • Network • Administrationn";
+    const typingElement = document.getElementById("typing-text");
+    
+    let textIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+        // Mengambil potongan teks dari awal hingga index saat ini
+        let currentText = text.substring(0, textIndex);
+        typingElement.innerHTML = currentText;
+
+        // Mengatur kecepatan: lebih lambat saat mengetik, lebih cepat saat menghapus
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && textIndex < text.length) {
+            // Mode mengetik: tambah 1 huruf
+            textIndex++;
+        } else if (isDeleting && textIndex > 0) {
+            // Mode menghapus: kurangi 1 huruf
+            textIndex--;
+        }
+
+        // Jika teks sudah selesai diketik semua
+        if (!isDeleting && textIndex === text.length) {
+            typeSpeed = 2000; // Jeda 2 detik sebelum mulai menghapus
+            isDeleting = true;
+        } 
+        // Jika teks sudah terhapus semua
+        else if (isDeleting && textIndex === 0) {
+            isDeleting = false;
+            typeSpeed = 500; // Jeda setengah detik sebelum mengetik ulang
+        }
+
+        // Jalankan fungsi lagi dengan jeda waktu yang sudah diatur
+        setTimeout(typeWriter, typeSpeed);
+    }
+
+    // Jalankan animasi saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", typeWriter);
+</script>
+
+</body>
+</html>
